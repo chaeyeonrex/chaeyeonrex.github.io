@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaeyeon Renée Eunice Xon | Curved Economics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827;
+            color: #E5E7EB;
+        }
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+        }
+        .concept-card {
+            background-color: #1F2937;
+            border: 1px solid #374151;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .concept-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(99, 102, 241, 0.1);
+        }
+        .paper-card {
+            background-color: #1F2937;
+            border: 1px solid #374151;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: #6366F1;
+            border: 2px solid #111827;
+        }
+        .modal {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .modal-content {
+            background-color: #1F2937;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #6366F1;
+            transition: width 0.3s;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-white">C.R.E. Xon</div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#philosophy" class="nav-link text-gray-300 hover:text-white">Philosophy</a>
+                <a href="#concepts" class="nav-link text-gray-300 hover:text-white">Core Concepts</a>
+                <a href="#research" class="nav-link text-gray-300 hover:text-white">Research</a>
+                <a href="#timeline" class="nav-link text-gray-300 hover:text-white">Journey</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-white">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+            <a href="#philosophy" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Philosophy</a>
+            <a href="#concepts" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Core Concepts</a>
+            <a href="#research" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Research</a>
+            <a href="#timeline" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Journey</a>
+            <a href="#contact" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+        <canvas id="hero-canvas"></canvas>
+        <div class="relative z-10 p-4">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight animate-fade-in-down">Chaeyeon Renée Eunice Xon</h1>
+            <p class="mt-4 text-xl md:text-2xl text-gray-300 animate-fade-in-up">The Architecture of Choice: Reclaiming Rationality through Curved Economics.</p>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 py-20">
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="py-20">
+            <div class="grid md:grid-cols-5 gap-12 items-center">
+                <div class="md:col-span-2">
+                    <img src="https://placehold.co/400x500/1F2937/E5E7EB?text=C.R.E.+Xon" alt="Profile picture of Chaeyeon Renée Eunice Xon" class="rounded-lg shadow-2xl w-full h-auto object-cover">
+                </div>
+                <div class="md:col-span-3">
+                    <h2 class="section-title text-4xl mb-6 text-white">Research Philosophy</h2>
+                    <p class="text-lg text-gray-300 mb-4">
+                        Economic behavior often deviates from static optimization. This is not due to irrationality, but because movement itself is structurally constrained. My research reconceptualizes rationality as 'directional accessibility under structural friction.'
+                    </p>
+                    <p class="text-lg text-gray-300 mb-4">
+                        Economic agents do not instantaneously pick from a set of choices; they navigate an 'invisible terrain' where costs and constraints exist. Behaviors like delay, status quo bias, and asymmetric responses may not be psychological biases, but rather the optimized outcomes of a rational agent facing a curved landscape.
+                    </p>
+                    <p class="text-lg text-gray-300">
+                        This perspective provides a new language to unify microeconomics, macroeconomics, behavioral economics, and game theory, extending economics from a 'theory of choice' to a 'geometry of possible movement.'
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Concepts Section -->
+        <section id="concepts" class="py-20">
+            <h2 class="section-title text-4xl text-center mb-12 text-white">Core Concepts</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Concept Card 1 -->
+                <div class="concept-card p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-indigo-400">Curved Economics</h3>
+                    <p class="text-gray-300">Reconstructs the economic decision-making space not as a traditional Euclidean space ('flat space'), but as a Riemannian manifold ('curved space') where the path itself has costs and constraints. It explains economic behavior as a process of searching for the most efficient path, rather than instantly moving to the optimal choice.</p>
+                </div>
+                <!-- Concept Card 2 -->
+                <div class="concept-card p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-indigo-400">Reachability Equilibrium (XRE)</h3>
+                    <p class="text-gray-300">A new equilibrium concept where a strategy becomes a valid option only when it is cost-effectively 'reachable.' This maintains the conventional assumption of rationality while explaining various behavioral phenomena (e.g., delay, asymmetry) as rational outcomes of structural constraints.</p>
+                </div>
+                <!-- Concept Card 3 -->
+                <div class="concept-card p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-indigo-400">Structural Friction</h3>
+                    <p class="text-gray-300">The invisible costs that impede behavioral change. These include an 'activation threshold' that requires a shock of a certain intensity to trigger a response, 'directional asymmetry' where the costs of moving forward and backward differ, and 'path dependence' where past trajectories affect current friction.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="py-20">
+            <h2 class="section-title text-4xl text-center mb-12 text-white">Featured Research</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Paper 1 -->
+                <div class="paper-card rounded-lg overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold mb-2 text-white">Classifying Homo Economicus' Behavior: Rationality Reclaimed through Reachability Equilibrium</h3>
+                        <p class="text-sm text-gray-400 mb-4">July, 2025 (Preliminary)</p>
+                        <p class="text-gray-300 text-sm">This paper introduces the Reachability Equilibrium (XRE) framework and applies it to two distinct domains: NASDAQ data from the dot-com era and behavioral data following YouTube policy changes. It reinterprets market anomalies as rational responses to structural constraints.</p>
+                    </div>
+                    <div class="p-6 bg-gray-800">
+                        <button onclick="openModal('modal1')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition">View Details</button>
+                    </div>
+                </div>
+                <!-- Paper 2 -->
+                <div class="paper-card rounded-lg overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold mb-2 text-white">Notes on Curved Economics</h3>
+                        <p class="text-sm text-gray-400 mb-4">March - May, 2025 (Weekly Drafts)</p>
+                        <p class="text-gray-300 text-sm">A collection of 11 weekly research notes that build the theoretical foundation of 'Curved Economics.' It explores the geometric structure of economic behavior using tools from differential geometry to abstract algebra.</p>
+                    </div>
+                    <div class="p-6 bg-gray-800">
+                        <button onclick="openModal('modal2')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition">View Details</button>
+                    </div>
+                </div>
+                 <!-- Paper 3 -->
+                <div class="paper-card rounded-lg overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold mb-2 text-white">Observed Matching under Projection Constraints</h3>
+                        <p class="text-sm text-gray-400 mb-4">July, 2025 (Working Notes)</p>
+                        <p class="text-gray-300 text-sm">Proposes a theory where matching outcomes are shaped by perceptual constraints, arguing that structurally different agents can appear identical to an observer, leading to new forms of identification failure.</p>
+                    </div>
+                    <div class="p-6 bg-gray-800">
+                        <button onclick="openModal('modal3')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="py-20">
+            <h2 class="section-title text-4xl text-center mb-16 text-white">Intellectual Journey</h2>
+            <div class="relative max-w-2xl mx-auto">
+                <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-700"></div>
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item mt-8 md:mt-0">
+                    <div class="md:flex items-center">
+                        <div class="md:w-1/2 md:pr-8">
+                            <div class="p-6 rounded-lg bg-gray-800">
+                                <p class="text-sm text-indigo-400">March, 2025</p>
+                                <h3 class="text-lg font-bold text-white mt-1">The Inception of Curved Economics</h3>
+                                <p class="text-sm text-gray-300 mt-2">First formulated the idea of reconfiguring decision space as a 'curved space' and began writing "Notes on Curved Economics."</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2"></div>
+                    </div>
+                </div>
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item mt-8">
+                    <div class="md:flex items-center flex-row-reverse">
+                        <div class="md:w-1/2 md:pl-8">
+                            <div class="p-6 rounded-lg bg-gray-800">
+                                <p class="text-sm text-indigo-400">April, 2025</p>
+                                <h3 class="text-lg font-bold text-white mt-1">Introduction of Abstract Algebra</h3>
+                                <p class="text-sm text-gray-300 mt-2">Introduced Quaternions and Octonions to mathematically model path dependence and strategic collapse, adding a new dimension of depth to the research.</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2"></div>
+                    </div>
+                </div>
+                 <!-- Timeline Item 3 -->
+                <div class="timeline-item mt-8">
+                    <div class="md:flex items-center">
+                        <div class="md:w-1/2 md:pr-8">
+                            <div class="p-6 rounded-lg bg-gray-800">
+                                <p class="text-sm text-indigo-400">May, 2025</p>
+                                <h3 class="text-lg font-bold text-white mt-1">Expansion into Ontology and Ethics</h3>
+                                <p class="text-sm text-gray-300 mt-2">Reinterpreted economic 'inaction' as an ethical choice for ontological stability, broadening the philosophical horizons of the research.</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2"></div>
+                    </div>
+                </div>
+                 <!-- Timeline Item 4 -->
+                 <div class="timeline-item mt-8">
+                    <div class="md:flex items-center flex-row-reverse">
+                        <div class="md:w-1/2 md:pl-8">
+                            <div class="p-6 rounded-lg bg-gray-800">
+                                <p class="text-sm text-indigo-400">July, 2025</p>
+                                <h3 class="text-lg font-bold text-white mt-1">Completion of the XRE Framework</h3>
+                                <p class="text-sm text-gray-300 mt-2">Culminated the theoretical exploration by completing the 'Reachability Equilibrium' framework and releasing initial drafts that empirically test it.</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 text-center">
+            <h2 class="section-title text-4xl mb-4 text-white">Get in Touch</h2>
+            <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+                My work aims to build a bridge between rationalist and behavioral perspectives. If you are interested in collaboration or have any inquiries, please feel free to reach out.
+            </p>
+            <a href="mailto:eunixon@yonsei.ac.kr" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg transition text-lg">
+                eunixon@yonsei.ac.kr
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900">
+        <div class="container mx-auto px-6 py-4 text-center text-gray-500">
+            &copy; 2025 Chaeyeon Renée Eunice Xon. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal fixed inset-0 z-50 hidden items-center justify-center p-4">
+        <div class="modal-content max-w-3xl w-full mx-auto rounded-lg shadow-xl overflow-y-auto" style="max-height: 90vh;">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-white">Classifying Homo Economicus' Behavior: Rationality Reclaimed through Reachability Equilibrium</h2>
+                    <button onclick="closeModal('modal1')" class="text-gray-400 hover:text-white">&times;</button>
+                </div>
+                <p class="text-sm text-gray-400 mb-4">July, 2025 (Preliminary)</p>
+                <h4 class="font-bold text-lg text-indigo-400 mb-2">Abstract</h4>
+                <p class="text-gray-300 mb-6 text-sm">This paper introduces the Reachability Equilibrium (XRE) framework, where deviations from static optimization arise from structural constraints on adjustment rather than from irrationality. We model the latent geometry of the adjustment space using optimal control methods. Applying XRE to NASDAQ data from the dot-com era (1995-2005), we identify key nonlinear dynamics, including activation thresholds, VIX-amplified asymmetry, and path dependence. Extending this approach to online platforms, we analyze Google Trends and pageview data related to YouTube policy and find the same structural dynamics. XRE provides a unified framework to reinterpret these anomalies as rational responses to an invisible terrain.</p>
+                <h4 class="font-bold text-lg text-indigo-400 mb-2">Key Contributions</h4>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+                    <li><b>Theoretical Framework:</b> Proposes **Reachability Equilibrium (XRE)**, where rationality is redefined as optimal navigation across a 'curved' decision space with structural frictions.</li>
+                    <li><b>Reinterpretation of Anomalies:</b> Reframes behavioral patterns like inertia and loss aversion not as psychological biases, but as emergent properties of the adjustment terrain's geometry (e.g., activation thresholds, directional asymmetry).</li>
+                    <li><b>Empirical Validation (Finance):</b> Validates the framework using NASDAQ data from the dot-com era, identifying VIX-amplified asymmetry and macro-conditional path dependence.</li>
+                    <li><b>Empirical Validation (Platforms):</b> Demonstrates the framework's generalizability by finding the same structural dynamics in online behavior following YouTube policy changes.</li>
+                </ul>
+                <div class="mt-8 text-center">
+                    <a href="#" class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded transition">Download PDF (Coming Soon)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="modal2" class="modal fixed inset-0 z-50 hidden items-center justify-center p-4">
+        <div class="modal-content max-w-3xl w-full mx-auto rounded-lg shadow-xl overflow-y-auto" style="max-height: 90vh;">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-white">Notes on Curved Economics</h2>
+                    <button onclick="closeModal('modal2')" class="text-gray-400 hover:text-white">&times;</button>
+                </div>
+                <p class="text-sm text-gray-400 mb-4">March - May, 2025 (Weekly Drafts)</p>
+                <h4 class="font-bold text-lg text-indigo-400 mb-2">Overview</h4>
+                <p class="text-gray-300 mb-6 text-sm">
+                    A collection of research notes written over 11 weeks, documenting the theoretical development of 'Curved Economics.' These notes detail the process of geometrically reinterpreting economic decision spaces and further modeling complex phenomena like path dependence and identity fragmentation through abstract algebra.
+                </p>
+                <h4 class="font-bold text-lg text-indigo-400 mb-2">Key Concepts Explored</h4>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+                    <li><b>Riemannian Manifolds:</b> Models the decision-making space as a 'curved space' to analyze the costs of the path itself.</li>
+                    <li><b>Quaternions:</b> Uses quaternions, where the order of multiplication matters, to mathematically represent path dependence, where the sequence of events affects the outcome.</li>
+                    <li><b>Octonions:</b> Employs non-associative octonions to explain strategic collapse and identity fragmentation under extreme cognitive load.</li>
+                    <li><b>Ontological Economics:</b> Interprets 'inaction' as a rational and ethical choice for maintaining ontological stability.</li>
+                </ul>
+                 <div class="mt-8 text-center">
+                    <a href="#" class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded transition">Download PDF (Coming Soon)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal fixed inset-0 z-50 hidden items-center justify-center p-4">
+        <div class="modal-content max-w-3xl w-full mx-auto rounded-lg shadow-xl overflow-y-auto" style="max-height: 90vh;">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-white">Observed Matching under Projection Constraints</h2>
+                    <button onclick="closeModal('modal3')" class="text-gray-400 hover:text-white">&times;</button>
+                </div>
+                <p class="text-sm text-gray-400 mb-4">July, 2025 (Working Notes)</p>
+                <h4 class="font-bold text-lg text-indigo-400 mb-2">Overview</h4>
+                <p class="text-gray-300 mb-6 text-sm">
+                    This work proposes that informational frictions can arise from the architecture of perception itself. It develops a theory where agents make decisions based on a 'projection' of the world, not its full structure. This can lead to situations where fundamentally different economic states appear identical to an observer, challenging standard identification assumptions in matching and trade models.
+                </p>
+                <h4 class="font-bold text-lg text-indigo-400 mb-2">Key Implications</h4>
+                <ul class="list-disc list-inside text-gray-300 space-y-2 text-sm">
+                    <li><b>Perceptual Equivalence:</b> Structurally different types or states can become observationally indistinguishable when viewed through a projection.</li>
+                    <li><b>Observer-Relative Continuity:</b> A path of change can seem smooth to an observer even if it contains abrupt structural breaks, potentially delaying belief updates.</li>
+                    <li><b>Matching on Projections:</b> Matching mechanisms may operate on "perceived types" rather than true identities, leading to coarse outcomes where distinct types are treated the same.</li>
+                    <li><b>Use Case in Trade:</b> The framework explains how two countries with different fundamentals might exhibit identical trade flows, as their structural differences are compressed by the observer's "lens."</li>
+                </ul>
+                 <div class="mt-8 text-center">
+                    <a href="#" class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded transition">Download PDF (Coming Soon)</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // --- GSAP Animations ---
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate sections on scroll
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            gsap.from(section, {
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    toggleActions: 'play none none none',
+                },
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                ease: 'power3.out'
+            });
+        });
+        
+        // --- Header Scroll Effect ---
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('bg-gray-900', 'shadow-lg');
+                header.classList.remove('bg-transparent');
+            } else {
+                header.classList.remove('bg-gray-900', 'shadow-lg');
+                header.classList.add('bg-transparent');
+            }
+        });
+
+        // --- Active Nav Link Highlighting ---
+        const navLinks = document.querySelectorAll('nav a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // --- Mobile Menu Toggle ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Modal Logic ---
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+            document.getElementById(modalId).classList.add('flex');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+            document.getElementById(modalId).classList.remove('flex');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close modal on escape key press
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal').forEach(modal => {
+                    if (!modal.classList.contains('hidden')) {
+                        closeModal(modal.id);
+                    }
+                });
+            }
+        });
+        
+        // Close modal on background click
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                closeModal(e.target.id);
+            }
+        });
+
+        // --- Hero Canvas Animation ---
+        const canvas = document.getElementById('hero-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let width, height;
+
+        function resizeCanvas() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.radius = Math.random() * 1.5;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(229, 231, 235, 0.5)';
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const particleCount = Math.floor(width * height / 20000);
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+
+                    if (dist < 120) {
+                        ctx.beginPath();
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.strokeStyle = `rgba(165, 180, 252, ${1 - dist / 120})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            initParticles();
+        });
+
+        resizeCanvas();
+        initParticles();
+        animate();
+    </script>
+</body>
+</html>
