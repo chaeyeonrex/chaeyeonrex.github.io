@@ -78,7 +78,6 @@
 </head>
 <body class="antialiased">
 
-    <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="text-2xl font-bold text-white">C.R.E. Xon</div>
@@ -93,7 +92,6 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
             <a href="#philosophy" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Philosophy</a>
             <a href="#concepts" class="block py-2 px-4 text-sm text-gray-300 hover:bg-gray-700">Core Concepts</a>
@@ -103,7 +101,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
         <canvas id="hero-canvas"></canvas>
         <div class="relative z-10 p-4">
@@ -113,7 +110,6 @@
     </section>
 
     <main class="container mx-auto px-6 py-20">
-        <!-- Philosophy Section -->
         <section id="philosophy" class="py-20">
             <div class="grid md:grid-cols-5 gap-12 items-center">
                 <div class="md:col-span-2">
@@ -134,21 +130,17 @@
             </div>
         </section>
 
-        <!-- Core Concepts Section -->
         <section id="concepts" class="py-20">
             <h2 class="section-title text-4xl text-center mb-12 text-white">Core Concepts</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Concept Card 1 -->
                 <div class="concept-card p-8 rounded-lg">
                     <h3 class="text-2xl font-bold mb-4 text-indigo-400">Curved Economics</h3>
                     <p class="text-gray-300">Reconstructs the economic decision-making space not as a traditional Euclidean space ('flat space'), but as a Riemannian manifold ('curved space') where the path itself has costs and constraints. It explains economic behavior as a process of searching for the most efficient path, rather than instantly moving to the optimal choice.</p>
                 </div>
-                <!-- Concept Card 2 -->
                 <div class="concept-card p-8 rounded-lg">
                     <h3 class="text-2xl font-bold mb-4 text-indigo-400">Reachability Equilibrium (XRE)</h3>
                     <p class="text-gray-300">A new equilibrium concept where a strategy becomes a valid option only when it is cost-effectively 'reachable.' This maintains the conventional assumption of rationality while explaining various behavioral phenomena (e.g., delay, asymmetry) as rational outcomes of structural constraints.</p>
                 </div>
-                <!-- Concept Card 3 -->
                 <div class="concept-card p-8 rounded-lg">
                     <h3 class="text-2xl font-bold mb-4 text-indigo-400">Structural Friction</h3>
                     <p class="text-gray-300">The invisible costs that impede behavioral change. These include an 'activation threshold' that requires a shock of a certain intensity to trigger a response, 'directional asymmetry' where the costs of moving forward and backward differ, and 'path dependence' where past trajectories affect current friction.</p>
@@ -156,11 +148,9 @@
             </div>
         </section>
 
-        <!-- Research Section -->
         <section id="research" class="py-20">
             <h2 class="section-title text-4xl text-center mb-12 text-white">Featured Research</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Paper 1 -->
                 <div class="paper-card rounded-lg overflow-hidden flex flex-col">
                     <div class="p-6 flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-white">Classifying Homo Economicus' Behavior: Rationality Reclaimed through Reachability Equilibrium</h3>
@@ -171,7 +161,6 @@
                         <button onclick="openModal('modal1')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition">View Details</button>
                     </div>
                 </div>
-                <!-- Paper 2 -->
                 <div class="paper-card rounded-lg overflow-hidden flex flex-col">
                     <div class="p-6 flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-white">Notes on Curved Economics</h3>
@@ -182,8 +171,7 @@
                         <button onclick="openModal('modal2')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition">View Details</button>
                     </div>
                 </div>
-                 <!-- Paper 3 -->
-                <div class="paper-card rounded-lg overflow-hidden flex flex-col">
+                 <div class="paper-card rounded-lg overflow-hidden flex flex-col">
                     <div class="p-6 flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-white">Observed Matching under Projection Constraints</h3>
                         <p class="text-sm text-gray-400 mb-4">July, 2025 (Working Notes)</p>
@@ -196,12 +184,10 @@
             </div>
         </section>
 
-        <!-- Timeline Section -->
         <section id="timeline" class="py-20">
             <h2 class="section-title text-4xl text-center mb-16 text-white">Intellectual Journey</h2>
             <div class="relative max-w-2xl mx-auto">
                 <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-700"></div>
-                <!-- Timeline Item 1 -->
                 <div class="timeline-item mt-8 md:mt-0">
                     <div class="md:flex items-center">
                         <div class="md:w-1/2 md:pr-8">
@@ -214,7 +200,6 @@
                         <div class="md:w-1/2"></div>
                     </div>
                 </div>
-                <!-- Timeline Item 2 -->
                 <div class="timeline-item mt-8">
                     <div class="md:flex items-center flex-row-reverse">
                         <div class="md:w-1/2 md:pl-8">
@@ -227,8 +212,7 @@
                         <div class="md:w-1/2"></div>
                     </div>
                 </div>
-                 <!-- Timeline Item 3 -->
-                <div class="timeline-item mt-8">
+                 <div class="timeline-item mt-8">
                     <div class="md:flex items-center">
                         <div class="md:w-1/2 md:pr-8">
                             <div class="p-6 rounded-lg bg-gray-800">
@@ -240,7 +224,6 @@
                         <div class="md:w-1/2"></div>
                     </div>
                 </div>
-                 <!-- Timeline Item 4 -->
                  <div class="timeline-item mt-8">
                     <div class="md:flex items-center flex-row-reverse">
                         <div class="md:w-1/2 md:pl-8">
@@ -256,7 +239,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="py-20 text-center">
             <h2 class="section-title text-4xl mb-4 text-white">Get in Touch</h2>
             <p class="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
@@ -268,14 +250,12 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-900">
         <div class="container mx-auto px-6 py-4 text-center text-gray-500">
             &copy; 2025 Chaeyeon Renée Eunice Xon. All Rights Reserved.
         </div>
     </footer>
 
-    <!-- Modal Structure -->
     <div id="modal1" class="modal fixed inset-0 z-50 hidden items-center justify-center p-4">
         <div class="modal-content max-w-3xl w-full mx-auto rounded-lg shadow-xl overflow-y-auto" style="max-height: 90vh;">
             <div class="p-8">
@@ -294,7 +274,7 @@
                     <li><b>Empirical Validation (Platforms):</b> Demonstrates the framework's generalizability by finding the same structural dynamics in online behavior following YouTube policy changes.</li>
                 </ul>
                 <div class="mt-8 text-center">
-                    <a href="#" class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded transition">Download PDF (Coming Soon)</a>
+                    <a href="https://raw.githubusercontent.com/chaeyeonrex/chaeyeonrex.github.io/main/drafts/Summary_XRE_CREX.pdf" download target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-6 rounded transition">Download Summary PDF</a>
                 </div>
             </div>
         </div>
@@ -358,8 +338,8 @@
         gsap.registerPlugin(ScrollTrigger);
 
         // Animate sections on scroll
-        const sections = document.querySelectorAll('section');
-        sections.forEach(section => {
+        const sectionsWithAnimation = document.querySelectorAll('main section');
+        sectionsWithAnimation.forEach(section => {
             gsap.from(section, {
                 scrollTrigger: {
                     trigger: section,
@@ -386,20 +366,23 @@
             }
         });
 
-        // --- Active Nav Link Highlighting ---
+        // --- Active Nav Link Highlighting (수정된 부분) ---
         const navLinks = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('main section'); // 더 구체적인 선택자
         window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 60) {
+                // pageYOffset 대신 window.scrollY 사용
+                if (window.scrollY >= sectionTop - 60) {
                     current = section.getAttribute('id');
                 }
             });
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
+                // 현재 섹션 ID와 링크의 href가 정확히 일치하는지 확인
+                if (link.getAttribute('href').substring(1) === current) {
                     link.classList.add('active');
                 }
             });
