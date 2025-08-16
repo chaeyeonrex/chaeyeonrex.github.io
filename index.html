@@ -152,7 +152,18 @@
 
         <section id="research" class="py-20">
             <h2 class="section-title text-4xl text-center mb-12 text-white">Featured Research</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Shaders for Economics Card -->
+                <div class="paper-card rounded-lg overflow-hidden flex flex-col">
+                    <div class="p-6 flex-grow">
+                        <h3 class="text-xl font-bold mb-2 text-white">Shaders for Economics: A Structural Reinterpretation</h3>
+                        <p class="text-sm text-gray-400 mb-4">April, 2025 (Working Paper Series)</p>
+                        <p class="text-gray-300 text-sm">A series of papers introducing the 'Shaded' framework, which reinterprets classical economic models by introducing a structural activation layer. This approach explains behavioral anomalies and market frictions not as irrationality, but as outcomes of a conditionally expressive structure.</p>
+                    </div>
+                    <div class="p-6 bg-gray-800">
+                        <button onclick="openModal('modal4')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition">View Details</button>
+                    </div>
+                </div>
                 <div class="paper-card rounded-lg overflow-hidden flex flex-col">
                     <div class="p-6 flex-grow">
                         <h3 class="text-xl font-bold mb-2 text-white">Classifying Homo Economicus' Behavior: Rationality Reclaimed through Reachability Equilibrium</h3>
@@ -189,12 +200,10 @@
         <section id="timeline" class="py-20">
             <h2 class="section-title text-4xl text-center mb-16 text-white">Intellectual Journey</h2>
             <div class="relative max-w-2xl mx-auto">
-                <!-- This is the timeline line. It has a default z-index of auto (effectively 0). -->
                 <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-700"></div>
                 <div class="timeline-item mt-8 md:mt-0">
                     <div class="md:flex items-center">
                         <div class="md:w-1/2 md:pr-8">
-                            <!-- FIXED: Added 'relative' and 'z-10' to lift this card above the line -->
                             <div class="relative z-10 p-6 rounded-lg bg-gray-800">
                                 <p class="text-sm text-indigo-400">March, 2025</p>
                                 <h3 class="text-lg font-bold text-white mt-1">The Inception of Curved Economics</h3>
@@ -207,7 +216,6 @@
                 <div class="timeline-item mt-8">
                     <div class="md:flex items-center flex-row-reverse">
                         <div class="md:w-1/2 md:pl-8">
-                            <!-- FIXED: Added 'relative' and 'z-10' to lift this card above the line -->
                             <div class="relative z-10 p-6 rounded-lg bg-gray-800">
                                 <p class="text-sm text-indigo-400">April, 2025</p>
                                 <h3 class="text-lg font-bold text-white mt-1">Introduction of Abstract Algebra</h3>
@@ -217,10 +225,23 @@
                         <div class="md:w-1/2"></div>
                     </div>
                 </div>
-                 <div class="timeline-item mt-8">
+                <!-- NEW TIMELINE ITEM FOR SHADERS -->
+                <div class="timeline-item mt-8">
                     <div class="md:flex items-center">
                         <div class="md:w-1/2 md:pr-8">
-                            <!-- FIXED: Added 'relative' and 'z-10' to lift this card above the line -->
+                            <div class="relative z-10 p-6 rounded-lg bg-gray-800">
+                                <p class="text-sm text-indigo-400">April, 2025</p>
+                                <h3 class="text-lg font-bold text-white mt-1">Formalization of the 'Shaded' Framework</h3>
+                                <p class="text-sm text-gray-300 mt-2">Began formalizing the 'Shaded' framework to reinterpret classical economic models through a structural activation layer, explaining anomalies as outcomes of a conditionally expressive structure.</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2"></div>
+                    </div>
+                </div>
+                 <!-- FIXED: May item alignment changed to right -->
+                 <div class="timeline-item mt-8">
+                    <div class="md:flex items-center flex-row-reverse">
+                        <div class="md:w-1/2 md:pl-8">
                             <div class="relative z-10 p-6 rounded-lg bg-gray-800">
                                 <p class="text-sm text-indigo-400">May, 2025</p>
                                 <h3 class="text-lg font-bold text-white mt-1">Expansion into Ontology and Ethics</h3>
@@ -230,10 +251,10 @@
                         <div class="md:w-1/2"></div>
                     </div>
                 </div>
+                 <!-- FIXED: July item alignment changed to left -->
                  <div class="timeline-item mt-8">
-                    <div class="md:flex items-center flex-row-reverse">
-                        <div class="md:w-1/2 md:pl-8">
-                            <!-- FIXED: Added 'relative' and 'z-10' to lift this card above the line -->
+                    <div class="md:flex items-center">
+                        <div class="md:w-1/2 md:pr-8">
                             <div class="relative z-10 p-6 rounded-lg bg-gray-800">
                                 <p class="text-sm text-indigo-400">July, 2025</p>
                                 <h3 class="text-lg font-bold text-white mt-1">Completion of the XRE Framework</h3>
@@ -268,7 +289,7 @@
             <div class="p-8">
                 <div class="flex justify-between items-center mb-6">
                     <h2 class="text-2xl font-bold text-white">Classifying Homo Economicus' Behavior: Rationality Reclaimed through Reachability Equilibrium</h2>
-                    <button onclick="closeModal('modal1')" class="text-gray-400 hover:text-white">&times;</button>
+                    <button onclick="closeModal('modal1')" class="text-gray-400 hover:text-white text-3xl leading-none">&times;</button>
                 </div>
                 <p class="text-sm text-gray-400 mb-4">July, 2025 (Preliminary)</p>
                 <h4 class="font-bold text-lg text-indigo-400 mb-2">Abstract</h4>
@@ -292,7 +313,7 @@
             <div class="p-8">
                 <div class="flex justify-between items-center mb-6">
                     <h2 class="text-2xl font-bold text-white">Notes on Curved Economics</h2>
-                    <button onclick="closeModal('modal2')" class="text-gray-400 hover:text-white">&times;</button>
+                    <button onclick="closeModal('modal2')" class="text-gray-400 hover:text-white text-3xl leading-none">&times;</button>
                 </div>
                 <p class="text-sm text-gray-400 mb-4">March - May, 2025 (Weekly Drafts)</p>
                 <h4 class="font-bold text-lg text-indigo-400 mb-2">Overview</h4>
@@ -318,7 +339,7 @@
             <div class="p-8">
                 <div class="flex justify-between items-center mb-6">
                     <h2 class="text-2xl font-bold text-white">Observed Matching under Projection Constraints</h2>
-                    <button onclick="closeModal('modal3')" class="text-gray-400 hover:text-white">&times;</button>
+                    <button onclick="closeModal('modal3')" class="text-gray-400 hover:text-white text-3xl leading-none">&times;</button>
                 </div>
                 <p class="text-sm text-gray-400 mb-4">July, 2025 (Working Notes)</p>
                 <h4 class="font-bold text-lg text-indigo-400 mb-2">Overview</h4>
@@ -340,6 +361,71 @@
         </div>
     </div>
 
+    <!-- NEW: Modal 4 for Shaders for Economics -->
+    <div id="modal4" class="modal fixed inset-0 z-50 hidden items-center justify-center p-4">
+        <div class="modal-content max-w-4xl w-full mx-auto rounded-lg shadow-xl overflow-y-auto" style="max-height: 90vh;">
+            <div class="p-8">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-2xl font-bold text-white">Shaders for Economics: Working Paper Series</h2>
+                    <button onclick="closeModal('modal4')" class="text-gray-400 hover:text-white text-3xl leading-none">&times;</button>
+                </div>
+                <p class="text-gray-400 mb-8 text-sm">
+                    The "Shaded" framework refines classical economic theories by introducing a structural activation function. This concept posits that choices, preferences, and market relationships are only expressed when certain structural conditions are met. Below are summaries of the core papers in this series.
+                </p>
+
+                <div class="space-y-8">
+                    <!-- Paper 1: Shaded Rational Agents -->
+                    <div class="p-4 border border-gray-700 rounded-lg">
+                        <h4 class="font-bold text-lg text-indigo-400 mb-2">1. Shaded Rational Agents (Shaded-RA)</h4>
+                        <p class="text-gray-300 mb-4 text-sm">Reinterprets behavioral phenomena like framing effects and decision fatigue not as deviations from rationality, but as outcomes of a structurally silenced choice space where options are not always "activated" for consideration.</p>
+                        <a href="https://raw.githubusercontent.com/chaeyeonrex/chaeyeonrex.github.io/main/drafts/Summary_ShadedRA_CREX.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition text-sm">Download Summary PDF</a>
+                    </div>
+
+                    <!-- Paper 2: Shaded General Equilibrium -->
+                    <div class="p-4 border border-gray-700 rounded-lg">
+                        <h4 class="font-bold text-lg text-indigo-400 mb-2">2. Shaded General Equilibrium (Shaded-GE)</h4>
+                        <p class="text-gray-300 mb-4 text-sm">Unifies micro and macro theory by introducing a shared "structural viability" function. This explains behavioral paradoxes (like Allais) and missing markets within a single, consistent Arrow-Debreu framework.</p>
+                        <a href="https://raw.githubusercontent.com/chaeyeonrex/chaeyeonrex.github.io/main/drafts/Summary_ShadedGE_CREX.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition text-sm">Download Summary PDF</a>
+                    </div>
+
+                    <!-- Paper 3: Shaded Expected Utility Theory -->
+                    <div class="p-4 border border-gray-700 rounded-lg">
+                        <h4 class="font-bold text-lg text-indigo-400 mb-2">3. Shaded Expected Utility Theory (Shaded-EUT)</h4>
+                        <p class="text-gray-300 mb-4 text-sm">Addresses paradoxes like Allais and Ellsberg by proposing that choices under uncertainty are filtered by structural feasibility. Anomalies arise not from distorted preferences, but from certain options being structurally "shaded" or unavailable for engagement.</p>
+                        <a href="https://raw.githubusercontent.com/chaeyeonrex/chaeyeonrex.github.io/main/drafts/Summary_ShadedEUT_CREX.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition text-sm">Download Summary PDF</a>
+                    </div>
+
+                    <!-- Paper 4: Shaded Regression -->
+                    <div class="p-4 border border-gray-700 rounded-lg">
+                        <h4 class="font-bold text-lg text-indigo-400 mb-2">4. Shaded Regression (Shaded-CLRM)</h4>
+                        <p class="text-gray-300 mb-4 text-sm">Offers a structural interpretation of econometric pathologies. Issues like endogeneity and heteroskedasticity are viewed as "low-activation regions" where the underlying linear relationship is structurally suppressed, not as model failure.</p>
+                        <a href="https://raw.githubusercontent.com/chaeyeonrex/chaeyeonrex.github.io/main/drafts/Summary_ShadedReg_CREX.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition text-sm">Download Summary PDF</a>
+                    </div>
+
+                    <!-- Paper 5: Shaded Exponential Discounting -->
+                    <div class="p-4 border border-gray-700 rounded-lg">
+                        <h4 class="font-bold text-lg text-indigo-400 mb-2">5. Shaded Exponential Discounting (Shaded-ED)</h4>
+                        <p class="text-gray-300 mb-4 text-sm">Accounts for present bias and time inconsistency by positing that future utility is only considered when structurally activated. This preserves the mathematical elegance of exponential discounting while explaining observed anomalies.</p>
+                        <a href="https://raw.githubusercontent.com/chaeyeonrex/chaeyeonrex.github.io/main/drafts/Summary_ShadedED_CREX.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition text-sm">Download Summary PDF</a>
+                    </div>
+
+                    <!-- Paper 6: Shaded Supply and Demand -->
+                    <div class="p-4 border border-gray-700 rounded-lg">
+                        <h4 class="font-bold text-lg text-indigo-400 mb-2">6. Shaded Supply and Demand (Shaded-SD)</h4>
+                        <p class="text-gray-300 mb-4 text-sm">Explains market inertia and sticky prices by proposing that supply and demand functions are only activated when price changes exceed a latent threshold. Inaction is a predictable feature of an untriggered market state.</p>
+                        <a href="https://raw.githubusercontent.com/chaeyeonrex/chaeyeonrex.github.io/main/drafts/Summary_ShadedSD_CREX.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition text-sm">Download Summary PDF</a>
+                    </div>
+
+                    <!-- Paper 7: Shaded Revealed Preference -->
+                    <div class="p-4 border border-gray-700 rounded-lg">
+                        <h4 class="font-bold text-lg text-indigo-400 mb-2">7. Shaded Revealed Preference (Shaded-RP)</h4>
+                        <p class="text-gray-300 mb-4 text-sm">Refines classical Revealed Preference theory by arguing that choices reveal preferences only when structurally activated. Apparent inconsistencies are rational choices made within a context-dependent, filtered choice set.</p>
+                        <a href="https://raw.githubusercontent.com/chaeyeonrex/chaeyeonrex.github.io/main/drafts/Summary_ShadedRP_CREX.pdf" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded transition text-sm">Download Summary PDF</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         // --- GSAP Animations ---
@@ -374,14 +460,13 @@
             }
         });
 
-        // --- Active Nav Link Highlighting (수정된 부분) ---
+        // --- Active Nav Link Highlighting ---
         const navLinks = document.querySelectorAll('nav a');
-        const sections = document.querySelectorAll('main section'); // 더 구체적인 선택자
+        const sections = document.querySelectorAll('main section');
         window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                // pageYOffset 대신 window.scrollY 사용
                 if (window.scrollY >= sectionTop - 60) {
                     current = section.getAttribute('id');
                 }
@@ -389,7 +474,6 @@
 
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                // 현재 섹션 ID와 링크의 href가 정확히 일치하는지 확인
                 if (link.getAttribute('href').substring(1) === current) {
                     link.classList.add('active');
                 }
@@ -405,15 +489,21 @@
 
         // --- Modal Logic ---
         function openModal(modalId) {
-            document.getElementById(modalId).classList.remove('hidden');
-            document.getElementById(modalId).classList.add('flex');
-            document.body.style.overflow = 'hidden';
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('flex');
+                document.body.style.overflow = 'hidden';
+            }
         }
 
         function closeModal(modalId) {
-            document.getElementById(modalId).classList.add('hidden');
-            document.getElementById(modalId).classList.remove('flex');
-            document.body.style.overflow = 'auto';
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }
         }
         
         // Close modal on escape key press
