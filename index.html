@@ -41,6 +41,8 @@
             border-radius: 50%;
             background-color: #6366F1;
             border: 2px solid #111827;
+            /* Ensure the dot is also above the line */
+            z-index: 10; 
         }
         .modal {
             background-color: rgba(0, 0, 0, 0.8);
@@ -187,11 +189,13 @@
         <section id="timeline" class="py-20">
             <h2 class="section-title text-4xl text-center mb-16 text-white">Intellectual Journey</h2>
             <div class="relative max-w-2xl mx-auto">
+                <!-- This is the timeline line. It has a default z-index of auto (effectively 0). -->
                 <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-700"></div>
                 <div class="timeline-item mt-8 md:mt-0">
                     <div class="md:flex items-center">
                         <div class="md:w-1/2 md:pr-8">
-                            <div class="p-6 rounded-lg bg-gray-800">
+                            <!-- FIXED: Added 'relative' and 'z-10' to lift this card above the line -->
+                            <div class="relative z-10 p-6 rounded-lg bg-gray-800">
                                 <p class="text-sm text-indigo-400">March, 2025</p>
                                 <h3 class="text-lg font-bold text-white mt-1">The Inception of Curved Economics</h3>
                                 <p class="text-sm text-gray-300 mt-2">First formulated the idea of reconfiguring decision space as a 'curved space' and began writing "Notes on Curved Economics."</p>
@@ -203,7 +207,8 @@
                 <div class="timeline-item mt-8">
                     <div class="md:flex items-center flex-row-reverse">
                         <div class="md:w-1/2 md:pl-8">
-                            <div class="p-6 rounded-lg bg-gray-800">
+                            <!-- FIXED: Added 'relative' and 'z-10' to lift this card above the line -->
+                            <div class="relative z-10 p-6 rounded-lg bg-gray-800">
                                 <p class="text-sm text-indigo-400">April, 2025</p>
                                 <h3 class="text-lg font-bold text-white mt-1">Introduction of Abstract Algebra</h3>
                                 <p class="text-sm text-gray-300 mt-2">Introduced Quaternions and Octonions to mathematically model path dependence and strategic collapse, adding a new dimension of depth to the research.</p>
@@ -215,7 +220,8 @@
                  <div class="timeline-item mt-8">
                     <div class="md:flex items-center">
                         <div class="md:w-1/2 md:pr-8">
-                            <div class="p-6 rounded-lg bg-gray-800">
+                            <!-- FIXED: Added 'relative' and 'z-10' to lift this card above the line -->
+                            <div class="relative z-10 p-6 rounded-lg bg-gray-800">
                                 <p class="text-sm text-indigo-400">May, 2025</p>
                                 <h3 class="text-lg font-bold text-white mt-1">Expansion into Ontology and Ethics</h3>
                                 <p class="text-sm text-gray-300 mt-2">Reinterpreted economic 'inaction' as an ethical choice for ontological stability, broadening the philosophical horizons of the research.</p>
@@ -227,7 +233,8 @@
                  <div class="timeline-item mt-8">
                     <div class="md:flex items-center flex-row-reverse">
                         <div class="md:w-1/2 md:pl-8">
-                            <div class="p-6 rounded-lg bg-gray-800">
+                            <!-- FIXED: Added 'relative' and 'z-10' to lift this card above the line -->
+                            <div class="relative z-10 p-6 rounded-lg bg-gray-800">
                                 <p class="text-sm text-indigo-400">July, 2025</p>
                                 <h3 class="text-lg font-bold text-white mt-1">Completion of the XRE Framework</h3>
                                 <p class="text-sm text-gray-300 mt-2">Culminated the theoretical exploration by completing the 'Reachability Equilibrium' framework and releasing initial drafts that empirically test it.</p>
